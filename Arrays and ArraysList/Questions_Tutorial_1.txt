@@ -1,0 +1,13 @@
+Question 1:
+
+Title: Finding the Second Largest Element in an Array
+
+Description:
+Write a Java program to find the second largest element in an array. Given an array of integers, the program should find and return the second largest element present in the array. If there is no second largest element, the program should return an appropriate message.
+
+Question 2:
+
+Title: Removing Duplicates from ArrayList
+
+Description:
+Write a Java program to remove duplicates from an ArrayList. Given an ArrayList of integers, the program should remove any duplicate elements and return a new ArrayList containing only unique elements.

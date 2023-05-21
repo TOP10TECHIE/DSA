@@ -1,0 +1,66 @@
+Example 1: 
+ArrayList implementation with objects and DataType ( expained in video )
+
+import java.util.ArrayList;
+
+public class ArrayListExample {
+    public static void main(String[] args) {
+        // Create an ArrayList to store elements of different types
+        ArrayList<Object> myList = new ArrayList<>();
+
+        // Add elements of different types to the ArrayList
+        myList.add(10);             // Integer
+        myList.add("Hello");        // String
+        myList.add(3.14);           // Double
+        myList.add(true);           // Boolean
+
+        // Access and print the elements and their types in the ArrayList
+        for (Object element : myList) {
+            System.out.println("Element: " + element + ", Type: " + element.getClass().getSimpleName());
+        }
+    }
+}
+
+OUTPUT:
+Element: 10, Type: Integer
+Element: Hello, Type: String
+Element: 3.14, Type: Double
+Element: true, Type: Boolean
+
+
+Example 2:
+Seating Arrangement with arrayList ( Explained in video )
+
+import java.util.ArrayList;
+import java.util.List;
+import java.util.Scanner;
+
+public class ClassroomSeating {
+    public static void main(String[] args) {
+        Scanner scanner = new Scanner(System.in);
+
+        // Collect names until a blank line is entered
+        List<String> names = new ArrayList<>();
+        System.out.println("Enter names (one per line, leave blank to finish):");
+        String name = scanner.nextLine();
+        while (!name.isEmpty()) {
+            names.add(name);
+            name = scanner.nextLine();
+        }
+
+        // Print the seating arrangement
+        System.out.println("Seating Arrangement:");
+        for (int i = 0; i < names.size(); i++) {
+            System.out.println("Seat " + (i + 1) + ": " + names.get(i));
+        }
+
+        scanner.close();
+    }
+}
+
+Explanation:
+
+List instead of a 2D array. The names are stored in the names list until the user enters a blank line.
+After collecting the names, the seating arrangement is printed by iterating over the list and displaying each name along with its corresponding seat number.
+
+This version eliminates the need for determining dimensions or creating a 2D array, making it simpler and more straightforward.
