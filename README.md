@@ -17,6 +17,9 @@ Stay tuned for our exciting lineup of tutorials, code walkthroughs, and problem-
 Don't forget to subscribe to our channel and hit the notification bell so you won't miss any video releases. Get ready to embark on the "3-Day DSA Challenge" with Top10Techie! 💻🚀
 
 For More About Us Follow us on:
-Insta: https://www.instagram.com/top10techie/
+## Insta: https://www.instagram.com/top10techie/
+<br></br>
 YouTube: https://youtube.com/@TOP_10_TECHIE
+<br></br>
 Blogger : https://t10techie.blogspot.com/
+<br></br>
