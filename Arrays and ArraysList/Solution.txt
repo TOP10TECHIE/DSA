@@ -1,0 +1,84 @@
+Question 1:
+
+Title: Finding the Second Largest Element in an Array
+
+Description:
+Write a Java program to find the second largest element in an array. Given an array of integers, the program should find and return the second largest element present in the array. If there is no second largest element, the program should return an appropriate message.
+
+Solution:
+
+public class SecondLargestElement {
+    public static void main(String[] args) {
+        int[] array = {5, 8, 2, 10, 7, 3};
+        int secondLargest = findSecondLargest(array);
+
+        if (secondLargest != Integer.MIN_VALUE) {
+            System.out.println("The second largest element is: " + secondLargest);
+        } else {
+            System.out.println("There is no second largest element in the array.");
+        }
+    }
+
+    public static int findSecondLargest(int[] array) {
+        int largest = Integer.MIN_VALUE;
+        int secondLargest = Integer.MIN_VALUE;
+
+        for (int i = 0; i < array.length; i++) {
+            if (array[i] > largest) {
+                secondLargest = largest;
+                largest = array[i];
+            } else if (array[i] > secondLargest && array[i] != largest) {
+                secondLargest = array[i];
+            }
+        }
+
+        return secondLargest;
+    }
+}
+
+
+Question 2:
+
+Title: Removing Duplicates from ArrayList
+
+Description:
+Write a Java program to remove duplicates from an ArrayList. Given an ArrayList of integers, the program should remove any duplicate elements and return a new ArrayList containing only unique elements.
+
+Solution:
+
+import java.util.ArrayList;
+import java.util.HashSet;
+import java.util.List;
+
+public class RemoveDuplicates {
+    public static void main(String[] args) {
+        List<Integer> numbers = new ArrayList<>();
+        numbers.add(5);
+        numbers.add(2);
+        numbers.add(7);
+        numbers.add(2);
+        numbers.add(9);
+        numbers.add(5);
+
+        List<Integer> uniqueNumbers = removeDuplicates(numbers);
+
+        System.out.println("Original ArrayList: " + numbers);
+        System.out.println("ArrayList without duplicates: " + uniqueNumbers);
+    }
+
+    public static List<Integer> removeDuplicates(List<Integer> list) {
+        HashSet<Integer> set = new HashSet<>();
+        List<Integer> uniqueList = new ArrayList<>();
+
+        for (Integer number : list) {
+            if (!set.contains(number)) {
+                set.add(number);
+                uniqueList.add(number);
+            }
+        }
+
+        return uniqueList;
+    }
+}
+
+Thank You For Supporting and Subscribe the Channel!!
