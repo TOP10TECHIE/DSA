@@ -1,0 +1,17 @@
+Singly Linked List Questions:
+
+Easy Question:
+Implement a method in Java to insert a node at the end of a singly linked list.
+
+Hard Question:
+Given a singly linked list, write a Java function to check if it contains a cycle (i.e., if there is any node that points back to a previous node in the list).
+
+Doubly Linked List Questions:
+
+Easy Question:
+Implement a method in Java to insert a node at the beginning of a doubly linked list.
+
+Hard Question:
+Given a doubly linked list, write a Java function to reverse the order of the elements in the list.
+
+Solutions will be released on 30 th May
