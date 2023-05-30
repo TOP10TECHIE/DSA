@@ -1,0 +1,84 @@
+Easy Question (Singly Linked List):
+Here's an example implementation of a method in Java to insert a node at the end of a singly linked list:
+
+public void insertAtEnd(int data) {
+    Node newNode = new Node(data);
+    
+    if (head == null) {
+        head = newNode;
+    } else {
+        Node current = head;
+        while (current.next != null) {
+            current = current.next;
+        }
+        current.next = newNode;
+    }
+}
+
+
+Hard Question (Singly Linked List):
+To check if a singly linked list contains a cycle, you can use the Floyd's Cycle Detection algorithm. Here's a Java function that implements this algorithm:
+
+public boolean hasCycle() {
+    if (head == null || head.next == null) {
+        return false;
+    }
+    
+    Node slow = head;
+    Node fast = head;
+    
+    while (fast != null && fast.next != null) {
+        slow = slow.next;
+        fast = fast.next.next;
+        
+        if (slow == fast) {
+            return true;
+        }
+    }
+    
+    return false;
+}
+
+
+Easy Question (Doubly Linked List):
+Here's an example implementation of a method in Java to insert a node at the beginning of a doubly linked list:
+
+public void insertAtBeginning(int data) {
+    Node newNode = new Node(data);
+    
+    if (head == null) {
+        head = newNode;
+        tail = newNode;
+    } else {
+        newNode.next = head;
+        head.previous = newNode;
+        head = newNode;
+    }
+}
+
+
+Hard Question (Doubly Linked List):
+To reverse the order of the elements in a doubly linked list, you can swap the previous and next pointers of each node. Here's a Java function that reverses a doubly linked list:
+
+public void reverse() {
+    if (head == null || head.next == null) {
+        return;
+    }
+    
+    Node current = head;
+    Node temp = null;
+    
+    while (current != null) {
+        temp = current.previous;
+        current.previous = current.next;
+        current.next = temp;
+        current = current.previous;
+    }
+    
+    temp = head;
+    head = tail;
+    tail = temp;
+}
+
+
+*These are just example solutions to the given questions. 
