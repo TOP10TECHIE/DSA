@@ -1,0 +1,29 @@
+Easy Question:
+
+Implement a method in Java to check if a cyclic singly linked list contains a specific element. Return true if the element is found, false otherwise. Provide an example and the expected output.
+Hard Question:
+2. Given a cyclic singly linked list, write a Java function to find the length of the cycle (i.e., the number of nodes within the cycle). Provide an example and the expected output.
+
+Example:
+Cyclic Singly Linked List: 1 -> 2 -> 3 -> 4 -> 2 (points back to node 2)
+
+Expected Output:
+
+contains(3) => true
+findCycleLength() => 3
+Doubly Linked List:
+
+Easy Question:
+3. Implement a method in Java to insert a node at the end of a doubly linked list. Provide an example and the expected output.
+
+Hard Question:
+4. Given a doubly linked list, write a Java function to find the second-to-last node in the list. Return the node value or null if the list has fewer than two nodes. Provide an example and the expected output.
+
+Example:
+Doubly Linked List: 1 <-> 2 <-> 3 <-> 4
+
+Expected Output:
+3. insertAtEnd(5)
+
+findSecondToLast() => 3
+Please note that the examples and expected outputs provided are for illustration purposes and may vary based on your specific implementation and data.
