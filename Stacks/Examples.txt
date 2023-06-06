@@ -1,0 +1,195 @@
+CyclicLinkedList:
+Example
+
+public class CyclicLinkedListExample {
+    private static class Node {
+        int data;
+        Node next;
+
+        Node(int data) {
+            this.data = data;
+            this.next = null;
+        }
+    }
+
+    public static void main(String[] args) {
+        // Create a cyclic linked list: 1 -> 2 -> 3 -> 4 -> 2 (points back to the second node)
+        Node head = new Node(1);
+        Node second = new Node(2);
+        Node third = new Node(3);
+        Node fourth = new Node(4);
+
+        head.next = second;
+        second.next = third;
+        third.next = fourth;
+        fourth.next = second; // Points back to the second node, creating a cycle
+
+        // Traverse and print the elements of the cyclic linked list (stop after a certain number of iterations to avoid infinite loop)
+        Node current = head;
+        int iterations = 0;
+        final int MAX_ITERATIONS = 10;
+
+        while (current != null && iterations < MAX_ITERATIONS) {
+            System.out.println(current.data);
+            current = current.next;
+            iterations++;
+        }
+
+        if (iterations == MAX_ITERATIONS) {
+            System.out.println("Reached maximum iterations to avoid infinite loop.");
+        }
+    }
+}
+
+
+CircularDoublyLinkedList:
+Example (explained in video)
+
+public class CircularDoublyLinkedListExample {
+    private static class Node {
+        int data;
+        Node previous;
+        Node next;
+
+        Node(int data) {
+            this.data = data;
+            this.previous = null;
+            this.next = null;
+        }
+    }
+
+    public static void main(String[] args) {
+        // Create a circular doubly linked list: 1 <-> 2 <-> 3 <-> 4 <-> 1 (points back to the first node)
+        Node head = new Node(1);
+        Node second = new Node(2);
+        Node third = new Node(3);
+        Node fourth = new Node(4);
+
+        head.next = second;
+        second.previous = head;
+        second.next = third;
+        third.previous = second;
+        third.next = fourth;
+        fourth.previous = third;
+        fourth.next = head; // Points back to the first node, forming a circular structure
+
+        // Traverse and print the elements of the circular doubly linked list (stop after a certain number of iterations to avoid infinite loop)
+        Node current = head;
+        int iterations = 0;
+        final int MAX_ITERATIONS = 10;
+
+        while (current != null && iterations < MAX_ITERATIONS) {
+            System.out.println(current.data);
+            current = current.next;
+            iterations++;
+        }
+
+        if (iterations == MAX_ITERATIONS) {
+            System.out.println("Reached maximum iterations to avoid infinite loop.");
+        }
+    }
+}
+
+
+Complete code with Traversal,Deletion,Insertion
+Example (explained in video)
+
+public class LinkedList {
+    
+    // Node class for LinkedList
+    private static class Node {
+        int data;
+        Node next;
+        
+        Node(int data) {
+            this.data = data;
+            this.next = null;
+        }
+    }
+    
+    private Node head;
+    
+    // Forward traversal of the linked list
+    public void traverse() {
+        Node current = head;
+        while (current != null) {
+            System.out.print(current.data + " ");
+            current = current.next;
+        }
+        System.out.println();
+    }
+    
+    // Insertion at the end of the linked list
+    public void insert(int data) {
+        Node newNode = new Node(data);
+        if (head == null) {
+            head = newNode;
+        } else {
+            Node current = head;
+            while (current.next != null) {
+                current = current.next;
+            }
+            current.next = newNode;
+        }
+    }
+    
+    // Deletion of a specific element from the linked list
+    public void delete(int data) {
+        if (head == null) {
+            return;
+        }
+        if (head.data == data) {
+            head = head.next;
+            return;
+        }
+        Node current = head;
+        Node previous = null;
+        while (current != null && current.data != data) {
+            previous = current;
+            current = current.next;
+        }
+        if (current == null) {
+            return;
+        }
+        previous.next = current.next;
+    }
+    
+    // Searching for an element in the linked list
+    public boolean search(int data) {
+        Node current = head;
+        while (current != null) {
+            if (current.data == data) {
+                return true;
+            }
+            current = current.next;
+        }
+        return false;
+    }
+    
+    // Test the LinkedList operations
+    public static void main(String[] args) {
+        LinkedList linkedList = new LinkedList();
+        
+        // Insert elements
+        linkedList.insert(10);
+        linkedList.insert(20);
+        linkedList.insert(30);
+        linkedList.insert(40);
+        linkedList.insert(50);
+        
+        // Forward traversal
+        System.out.println("Linked List: ");
+        linkedList.traverse(); // Output: 10 20 30 40 50
+        
+        // Search for an element
+        int searchElement = 30;
+        boolean isFound = linkedList.search(searchElement);
+        System.out.println("Element " + searchElement + " found: " + isFound); // Output: Element 30 found: true
+        
+        // Delete an element
+        int deleteElement = 40;
+        linkedList.delete(deleteElement);
+        System.out.println("Linked List after deletion of " + deleteElement + ": ");
+        linkedList.traverse(); // Output: 10 20 30 50
+    }
+}
